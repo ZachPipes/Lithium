@@ -11,15 +11,15 @@ struct Tile {
 };
 
 class World {
-    const int tileSize = 1000;
+    const int tileSize = 40;
     int mapWidth;
     int mapHeight;
     std::vector<std::vector<Tile>> map;
 
 public:
     World() {
-        mapWidth = 10;
-        mapHeight = 10;
+        mapWidth = 20;
+        mapHeight = 15;
         map.resize(mapHeight);
 
         // TEMPORARY WATER TILE
@@ -32,15 +32,17 @@ public:
             map[y].resize(mapWidth);
             for(int x = 0; x < mapWidth; x++) {
                 map[y][x] = Tile(Water, sf::Vector2i(x, y), texture);
-                map[y][x].texture.setPosition({static_cast<float>(x * tileSize), static_cast<float>(y * tileSize)});
             }
         }
     }
 
     void draw(sf::RenderWindow& window) const {
-        for(int height = 0; height < mapHeight; ++height) {
-            for(int width = 0; width < mapWidth; ++width) {
-                window.draw(map[height][width]);
+        for(int height = 0; height < mapHeight; height++) {
+            for(int width = 0; width < mapWidth; width++) {
+                sf::Sprite sprite(map[height][width].texture);
+                sprite.setPosition(sf::Vector2f(static_cast<float>(width * tileSize), static_cast<float>(height * tileSize)));
+
+                window.draw(sprite);
             }
         }
     }
