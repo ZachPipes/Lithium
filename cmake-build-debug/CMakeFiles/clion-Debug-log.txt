@@ -1,0 +1,5 @@
+G:\Programming\IDEs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=G:/Programming/IDEs/CLion/bin/ninja/win/x64/ninja.exe -G Ninja -S G:\Programming\Projects\Lithium -B G:\Programming\Projects\Lithium\cmake-build-debug
+-- Found SFML .. in G:/SFML/include
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: G:/Programming/Projects/Lithium/cmake-build-debug
