@@ -32,8 +32,16 @@ int main() {
         world.draw(window); // Draws world
 
         if(isKeyPressed(sf::Keyboard::Key::W)) {
-            std::cout << "MOVING" << std::endl;
             man.move(1);
+        }
+        if(isKeyPressed(sf::Keyboard::Key::A)) {
+            man.move(0);
+        }
+        if(isKeyPressed(sf::Keyboard::Key::S)) {
+            man.move(3);
+        }
+        if(isKeyPressed(sf::Keyboard::Key::D)) {
+            man.move(2);
         }
 
         world.drawSprite(window, man);
