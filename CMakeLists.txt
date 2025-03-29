@@ -7,10 +7,10 @@ add_executable(Lithium main.cpp
         entity.h
         world.h)
 
-include_directories(headers /usr/include G:/SFML/include)
+include_directories(headers /usr/include C:/SFML/include)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
-find_package(SFML REQUIRED system window graphics)
+find_package(SFML REQUIRED COMPONENTS system window graphics)
 if(SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
     target_link_libraries(Lithium ${SFML_LIBRARIES})

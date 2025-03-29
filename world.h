@@ -24,7 +24,7 @@ public:
 
         // TEMPORARY WATER TILE
         sf::Texture texture;
-        if(!texture.loadFromFile(R"(G:\Programming\Projects\Lithium\textures\Water.png)")) {
+        if(!texture.loadFromFile(R"(..\textures\Water.png)")) {
             std::cerr << "TEXTURE ERROR : Failed to load water texture." << std::endl;
         }
 
