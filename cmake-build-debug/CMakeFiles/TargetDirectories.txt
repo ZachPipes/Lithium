@@ -1,3 +1,0 @@
-C:/Programming/Projects/Lithium/cmake-build-debug/CMakeFiles/Lithium.dir
-C:/Programming/Projects/Lithium/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Programming/Projects/Lithium/cmake-build-debug/CMakeFiles/rebuild_cache.dir
