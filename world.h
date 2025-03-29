@@ -5,6 +5,8 @@
 
 #include "entity.h"
 
+constexpr int tileSize = 40;
+
 enum tileType {Land, Water};
 
 struct Tile {
@@ -14,7 +16,6 @@ struct Tile {
 };
 
 class World {
-    const int tileSize = 40;
     int mapWidth, mapHeight;
     std::vector<std::vector<Tile>> map;
 

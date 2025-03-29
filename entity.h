@@ -10,6 +10,10 @@ public:
     // Creates a basic entity with the man texture
     Entity(int x, int y, const sf::Texture& texture);
 
+    // Moves the entity in the specified direction
+    void move(int direction);
+
+    /// Getters and Setters ///
     sf::Sprite getSprite() const;
 };
 

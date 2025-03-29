@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = G:\Programming\IDEs\CLion\bin\cmake\win\x64\bin\cmake.exe
+CMAKE_COMMAND = C:\!Programming\IDEs\CLion\bin\cmake\win\x64\bin\cmake.exe
 
 # The command to remove a file.
-RM = G:\Programming\IDEs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f
+RM = C:\!Programming\IDEs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = G:\Programming\Projects\Lithium
+CMAKE_SOURCE_DIR = C:\Programming\Projects\Lithium
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = G:\Programming\Projects\Lithium\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Programming\Projects\Lithium\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Lithium.dir/depend.make
@@ -70,63 +70,63 @@ include CMakeFiles/Lithium.dir/flags.make
 
 CMakeFiles/Lithium.dir/main.cpp.obj: CMakeFiles/Lithium.dir/flags.make
 CMakeFiles/Lithium.dir/main.cpp.obj: CMakeFiles/Lithium.dir/includes_CXX.rsp
-CMakeFiles/Lithium.dir/main.cpp.obj: G:/Programming/Projects/Lithium/main.cpp
+CMakeFiles/Lithium.dir/main.cpp.obj: C:/Programming/Projects/Lithium/main.cpp
 CMakeFiles/Lithium.dir/main.cpp.obj: CMakeFiles/Lithium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=G:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lithium.dir/main.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/main.cpp.obj -MF CMakeFiles\Lithium.dir\main.cpp.obj.d -o CMakeFiles\Lithium.dir\main.cpp.obj -c G:\Programming\Projects\Lithium\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lithium.dir/main.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/main.cpp.obj -MF CMakeFiles\Lithium.dir\main.cpp.obj.d -o CMakeFiles\Lithium.dir\main.cpp.obj -c C:\Programming\Projects\Lithium\main.cpp
 
 CMakeFiles/Lithium.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Lithium.dir/main.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\Programming\Projects\Lithium\main.cpp > CMakeFiles\Lithium.dir\main.cpp.i
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Programming\Projects\Lithium\main.cpp > CMakeFiles\Lithium.dir\main.cpp.i
 
 CMakeFiles/Lithium.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Lithium.dir/main.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\Programming\Projects\Lithium\main.cpp -o CMakeFiles\Lithium.dir\main.cpp.s
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Programming\Projects\Lithium\main.cpp -o CMakeFiles\Lithium.dir\main.cpp.s
 
 CMakeFiles/Lithium.dir/world.cpp.obj: CMakeFiles/Lithium.dir/flags.make
 CMakeFiles/Lithium.dir/world.cpp.obj: CMakeFiles/Lithium.dir/includes_CXX.rsp
-CMakeFiles/Lithium.dir/world.cpp.obj: G:/Programming/Projects/Lithium/world.cpp
+CMakeFiles/Lithium.dir/world.cpp.obj: C:/Programming/Projects/Lithium/world.cpp
 CMakeFiles/Lithium.dir/world.cpp.obj: CMakeFiles/Lithium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=G:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lithium.dir/world.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/world.cpp.obj -MF CMakeFiles\Lithium.dir\world.cpp.obj.d -o CMakeFiles\Lithium.dir\world.cpp.obj -c G:\Programming\Projects\Lithium\world.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lithium.dir/world.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/world.cpp.obj -MF CMakeFiles\Lithium.dir\world.cpp.obj.d -o CMakeFiles\Lithium.dir\world.cpp.obj -c C:\Programming\Projects\Lithium\world.cpp
 
 CMakeFiles/Lithium.dir/world.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Lithium.dir/world.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\Programming\Projects\Lithium\world.cpp > CMakeFiles\Lithium.dir\world.cpp.i
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Programming\Projects\Lithium\world.cpp > CMakeFiles\Lithium.dir\world.cpp.i
 
 CMakeFiles/Lithium.dir/world.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Lithium.dir/world.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\Programming\Projects\Lithium\world.cpp -o CMakeFiles\Lithium.dir\world.cpp.s
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Programming\Projects\Lithium\world.cpp -o CMakeFiles\Lithium.dir\world.cpp.s
 
 CMakeFiles/Lithium.dir/entity.cpp.obj: CMakeFiles/Lithium.dir/flags.make
 CMakeFiles/Lithium.dir/entity.cpp.obj: CMakeFiles/Lithium.dir/includes_CXX.rsp
-CMakeFiles/Lithium.dir/entity.cpp.obj: G:/Programming/Projects/Lithium/entity.cpp
+CMakeFiles/Lithium.dir/entity.cpp.obj: C:/Programming/Projects/Lithium/entity.cpp
 CMakeFiles/Lithium.dir/entity.cpp.obj: CMakeFiles/Lithium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=G:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lithium.dir/entity.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/entity.cpp.obj -MF CMakeFiles\Lithium.dir\entity.cpp.obj.d -o CMakeFiles\Lithium.dir\entity.cpp.obj -c G:\Programming\Projects\Lithium\entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lithium.dir/entity.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/entity.cpp.obj -MF CMakeFiles\Lithium.dir\entity.cpp.obj.d -o CMakeFiles\Lithium.dir\entity.cpp.obj -c C:\Programming\Projects\Lithium\entity.cpp
 
 CMakeFiles/Lithium.dir/entity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Lithium.dir/entity.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\Programming\Projects\Lithium\entity.cpp > CMakeFiles\Lithium.dir\entity.cpp.i
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Programming\Projects\Lithium\entity.cpp > CMakeFiles\Lithium.dir\entity.cpp.i
 
 CMakeFiles/Lithium.dir/entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Lithium.dir/entity.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\Programming\Projects\Lithium\entity.cpp -o CMakeFiles\Lithium.dir\entity.cpp.s
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Programming\Projects\Lithium\entity.cpp -o CMakeFiles\Lithium.dir\entity.cpp.s
 
 CMakeFiles/Lithium.dir/TextureManager.cpp.obj: CMakeFiles/Lithium.dir/flags.make
 CMakeFiles/Lithium.dir/TextureManager.cpp.obj: CMakeFiles/Lithium.dir/includes_CXX.rsp
-CMakeFiles/Lithium.dir/TextureManager.cpp.obj: G:/Programming/Projects/Lithium/TextureManager.cpp
+CMakeFiles/Lithium.dir/TextureManager.cpp.obj: C:/Programming/Projects/Lithium/TextureManager.cpp
 CMakeFiles/Lithium.dir/TextureManager.cpp.obj: CMakeFiles/Lithium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=G:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lithium.dir/TextureManager.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/TextureManager.cpp.obj -MF CMakeFiles\Lithium.dir\TextureManager.cpp.obj.d -o CMakeFiles\Lithium.dir\TextureManager.cpp.obj -c G:\Programming\Projects\Lithium\TextureManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lithium.dir/TextureManager.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lithium.dir/TextureManager.cpp.obj -MF CMakeFiles\Lithium.dir\TextureManager.cpp.obj.d -o CMakeFiles\Lithium.dir\TextureManager.cpp.obj -c C:\Programming\Projects\Lithium\TextureManager.cpp
 
 CMakeFiles/Lithium.dir/TextureManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Lithium.dir/TextureManager.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\Programming\Projects\Lithium\TextureManager.cpp > CMakeFiles\Lithium.dir\TextureManager.cpp.i
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Programming\Projects\Lithium\TextureManager.cpp > CMakeFiles\Lithium.dir\TextureManager.cpp.i
 
 CMakeFiles/Lithium.dir/TextureManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Lithium.dir/TextureManager.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\Programming\Projects\Lithium\TextureManager.cpp -o CMakeFiles\Lithium.dir\TextureManager.cpp.s
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Programming\Projects\Lithium\TextureManager.cpp -o CMakeFiles\Lithium.dir\TextureManager.cpp.s
 
 # Object files for target Lithium
 Lithium_OBJECTS = \
@@ -143,13 +143,13 @@ Lithium.exe: CMakeFiles/Lithium.dir/world.cpp.obj
 Lithium.exe: CMakeFiles/Lithium.dir/entity.cpp.obj
 Lithium.exe: CMakeFiles/Lithium.dir/TextureManager.cpp.obj
 Lithium.exe: CMakeFiles/Lithium.dir/build.make
-Lithium.exe: G:/SFML/lib/libsfml-system-d.a
-Lithium.exe: G:/SFML/lib/libsfml-window-d.a
-Lithium.exe: G:/SFML/lib/libsfml-graphics-d.a
+Lithium.exe: /SFML/lib/libsfml-system-d.a
+Lithium.exe: /SFML/lib/libsfml-window-d.a
+Lithium.exe: /SFML/lib/libsfml-graphics-d.a
 Lithium.exe: CMakeFiles/Lithium.dir/linkLibs.rsp
 Lithium.exe: CMakeFiles/Lithium.dir/objects1.rsp
 Lithium.exe: CMakeFiles/Lithium.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=G:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Lithium.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Lithium.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Lithium.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -161,6 +161,6 @@ CMakeFiles/Lithium.dir/clean:
 .PHONY : CMakeFiles/Lithium.dir/clean
 
 CMakeFiles/Lithium.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" G:\Programming\Projects\Lithium G:\Programming\Projects\Lithium G:\Programming\Projects\Lithium\cmake-build-debug G:\Programming\Projects\Lithium\cmake-build-debug G:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles\Lithium.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Programming\Projects\Lithium C:\Programming\Projects\Lithium C:\Programming\Projects\Lithium\cmake-build-debug C:\Programming\Projects\Lithium\cmake-build-debug C:\Programming\Projects\Lithium\cmake-build-debug\CMakeFiles\Lithium.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Lithium.dir/depend
 

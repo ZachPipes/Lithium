@@ -1,3 +1,4 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 #include "entity.h"
@@ -14,7 +15,7 @@ int main() {
     World world(20,15);
 
     // Creating an entity
-    Entity man(3, 2, TextureManager::manTexture);
+    Entity man(7, 5, TextureManager::manTexture);
 
     // Game loop
     while(window.isOpen()) {
@@ -30,8 +31,12 @@ int main() {
 
         world.draw(window); // Draws world
 
-        world.drawSprite(window, man);
+        if(isKeyPressed(sf::Keyboard::Key::W)) {
+            std::cout << "MOVING" << std::endl;
+            man.move(1);
+        }
 
+        world.drawSprite(window, man);
         window.display(); // Displays the current frame
     }
 

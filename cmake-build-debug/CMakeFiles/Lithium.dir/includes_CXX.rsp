@@ -1,1 +1,1 @@
--IG:/Programming/Projects/Lithium/headers -I/usr/include -IC:/SFML/include -IG:/SFML/include
+-IC:/Programming/Projects/Lithium/headers -I/usr/include -IC:/SFML/include -I/SFML/include
