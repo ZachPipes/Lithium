@@ -7,7 +7,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Lithium");
 
     // Creating the world
-    World world;
+    World world(20,15);
 
     // Game loop
     while(window.isOpen()) {

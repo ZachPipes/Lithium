@@ -13,13 +13,15 @@ struct Tile {
 
 class World {
     const int tileSize = 40;
-    int mapWidth;
-    int mapHeight;
+    int mapWidth, mapHeight;
     std::vector<std::vector<Tile>> map;
 
+    sf::Texture waterTexture;
+    sf::Texture landTexture;
+
 public:
-    // Creates the base world with water textures
-    World();
+    // Creates a world with only water textures
+    World(int mapWidth, int mapHeight);
 
     // Draws the world in the window
     void draw(sf::RenderWindow& window) const;
