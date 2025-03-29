@@ -40,6 +40,6 @@ void World::draw(sf::RenderWindow& window) const {
     }
 }
 
-void World::drawSprite(sf::RenderWindow& window, Entity& entity) {
+void World::drawSprite(sf::RenderWindow& window, const Entity& entity) {
     window.draw(entity.getSprite());
 }

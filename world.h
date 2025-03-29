@@ -26,7 +26,7 @@ public:
     void draw(sf::RenderWindow& window) const;
 
     // Draws a sprite in the world
-    static void drawSprite(sf::RenderWindow& window, Entity& entity);
+    static void drawSprite(sf::RenderWindow& window, const Entity& entity);
 };
 
 #endif //WORLD_H

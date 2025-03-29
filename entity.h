@@ -8,7 +8,7 @@ class Entity {
 
 public:
     // Creates a basic entity with the man texture
-    Entity(int x, int y, sf::Texture texture);
+    Entity(int x, int y, const sf::Texture& texture);
 
     sf::Sprite getSprite() const;
 };
