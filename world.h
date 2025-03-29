@@ -1,6 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
-#include <iostream>
+
+#include <SFML/Graphics.hpp>
 
 enum tileType {Land, Water};
 
@@ -17,35 +18,11 @@ class World {
     std::vector<std::vector<Tile>> map;
 
 public:
-    World() {
-        mapWidth = 20;
-        mapHeight = 15;
-        map.resize(mapHeight);
+    // Creates the base world with water textures
+    World();
 
-        // TEMPORARY WATER TILE
-        sf::Texture texture;
-        if(!texture.loadFromFile(R"(..\textures\Water.png)")) {
-            std::cerr << "TEXTURE ERROR : Failed to load water texture." << std::endl;
-        }
-
-        for(int y = 0; y < mapHeight; y++) {
-            map[y].resize(mapWidth);
-            for(int x = 0; x < mapWidth; x++) {
-                map[y][x] = Tile(Water, sf::Vector2i(x, y), texture);
-            }
-        }
-    }
-
-    void draw(sf::RenderWindow& window) const {
-        for(int height = 0; height < mapHeight; height++) {
-            for(int width = 0; width < mapWidth; width++) {
-                sf::Sprite sprite(map[height][width].texture);
-                sprite.setPosition(sf::Vector2f(static_cast<float>(width * tileSize), static_cast<float>(height * tileSize)));
-
-                window.draw(sprite);
-            }
-        }
-    }
+    // Draws the world in the window
+    void draw(sf::RenderWindow& window) const;
 };
 
 #endif //WORLD_H

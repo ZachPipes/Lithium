@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Lithium main.cpp
         entity.h
-        world.h)
+        world.h
+        world.cpp
+        entity.cpp)
 
 include_directories(headers /usr/include C:/SFML/include)
 

@@ -24,7 +24,7 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 set(CMAKE_AR "C:/mingw64/bin/ar.exe")
 set(CMAKE_C_COMPILER_AR "C:/mingw64/bin/gcc-ar.exe")
-set(CMAKE_RANLIB ":")
+set(CMAKE_RANLIB "C:/mingw64/bin/ranlib.exe")
 set(CMAKE_C_COMPILER_RANLIB "C:/mingw64/bin/gcc-ranlib.exe")
 set(CMAKE_LINKER "C:/mingw64/bin/ld.exe")
 set(CMAKE_LINKER_LINK "")
