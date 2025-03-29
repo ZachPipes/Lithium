@@ -7,7 +7,9 @@ add_executable(Lithium main.cpp
         entity.h
         world.h
         world.cpp
-        entity.cpp)
+        entity.cpp
+        TextureManager.h
+        TextureManager.cpp)
 
 include_directories(headers /usr/include C:/SFML/include)
 

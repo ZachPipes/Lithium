@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "entity.h"
+
 enum tileType {Land, Water};
 
 struct Tile {
@@ -16,15 +18,15 @@ class World {
     int mapWidth, mapHeight;
     std::vector<std::vector<Tile>> map;
 
-    sf::Texture waterTexture;
-    sf::Texture landTexture;
-
 public:
     // Creates a world with only water textures
     World(int mapWidth, int mapHeight);
 
     // Draws the world in the window
     void draw(sf::RenderWindow& window) const;
+
+    // Draws a sprite in the world
+    static void drawSprite(sf::RenderWindow& window, Entity& entity);
 };
 
 #endif //WORLD_H

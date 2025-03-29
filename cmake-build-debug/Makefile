@@ -128,6 +128,30 @@ Lithium/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lithium.dir\build.make CMakeFiles/Lithium.dir/build
 .PHONY : Lithium/fast
 
+TextureManager.obj: TextureManager.cpp.obj
+.PHONY : TextureManager.obj
+
+# target to build an object file
+TextureManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lithium.dir\build.make CMakeFiles/Lithium.dir/TextureManager.cpp.obj
+.PHONY : TextureManager.cpp.obj
+
+TextureManager.i: TextureManager.cpp.i
+.PHONY : TextureManager.i
+
+# target to preprocess a source file
+TextureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lithium.dir\build.make CMakeFiles/Lithium.dir/TextureManager.cpp.i
+.PHONY : TextureManager.cpp.i
+
+TextureManager.s: TextureManager.cpp.s
+.PHONY : TextureManager.s
+
+# target to generate assembly for a file
+TextureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lithium.dir\build.make CMakeFiles/Lithium.dir/TextureManager.cpp.s
+.PHONY : TextureManager.cpp.s
+
 entity.obj: entity.cpp.obj
 .PHONY : entity.obj
 
@@ -209,6 +233,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Lithium
+	@echo ... TextureManager.obj
+	@echo ... TextureManager.i
+	@echo ... TextureManager.s
 	@echo ... entity.obj
 	@echo ... entity.i
 	@echo ... entity.s

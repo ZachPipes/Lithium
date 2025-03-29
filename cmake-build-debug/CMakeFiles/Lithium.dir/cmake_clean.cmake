@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Lithium.dir/TextureManager.cpp.obj"
+  "CMakeFiles/Lithium.dir/TextureManager.cpp.obj.d"
   "CMakeFiles/Lithium.dir/entity.cpp.obj"
   "CMakeFiles/Lithium.dir/entity.cpp.obj.d"
   "CMakeFiles/Lithium.dir/main.cpp.obj"
