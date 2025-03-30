@@ -5,7 +5,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include "world.h"
 
-Entity::Entity(const int x, const int y, const sf::Texture& texture) : x(x), y(y), sprite(texture) {
+Entity::Entity(const int x, const int y, const sf::Texture& texture) : x(x * tileSize), y(y * tileSize), sprite(texture) {
     sprite.setPosition(sf::Vector2f(static_cast<float>(x * tileSize), static_cast<float>(y * tileSize)));
 }
 
@@ -17,15 +17,14 @@ void Entity::move(const int direction) {
     // Change this in the future to be more fluid and dynamic
     switch(direction) {
         case 0: // Left
-            sprite.setPosition(sf::Vector2f(static_cast<float>(x-1), static_cast<float>(y)));
-
-            x = static_cast<int>(sprite.getPosition().x);
+            if(validMove(direction)) {
+                sprite.setPosition(sf::Vector2f(static_cast<float>(x-1), static_cast<float>(y)));
+                x = static_cast<int>(sprite.getPosition().x);
+            }
             break;
         case 1: // Up
             sprite.setPosition(sf::Vector2f(static_cast<float>(x), static_cast<float>(y-1)));
-            std::cout << "Y BEFORE: " << y << std::endl;
             y = static_cast<int>(sprite.getPosition().y);
-            std::cout << "Y AFTER: " << y << std::endl;
             break;
         case 2: // Right
             sprite.setPosition(sf::Vector2f(static_cast<float>(x+1), static_cast<float>(y)));
@@ -38,4 +37,8 @@ void Entity::move(const int direction) {
         default:
             std::cout << "Invalid direction chosen: \"" << direction << "\""<< std::endl;
     }
+}
+
+bool Entity::validMove(const int direction) {
+    return true;
 }

@@ -13,30 +13,25 @@ World::World(const int mapWidth, const int mapHeight)
     }
 
     // Creating the map with only water
-    map.resize(mapHeight);
-    for(int y = 0; y < mapHeight; y++) {
-        map[y].resize(mapWidth);
+    /*for(int y = 0; y < mapHeight; y++) {
         for(int x = 0; x < mapWidth; x++) {
-            map[y][x] = Tile(Water, sf::Vector2i(x, y), TextureManager::waterTexture);
+            map[Tile(DeepSea, TextureManager::DeepSeaTexture)] = {x, y};
         }
-    }
+    }*/
 
     // TEMPORARY LAND RECTANGLE
     for(int y = 3; y < 8; y++) {
         for(int x = 4; x < 12; x++) {
-            map[y][x] = Tile(Land, sf::Vector2i(x, y), TextureManager::landTexture);
+            map[Tile(Grass, TextureManager::GrassTexture)] = {x, y};
         }
     }
 }
 
 void World::draw(sf::RenderWindow& window) const {
-    for(int height = 0; height < mapHeight; height++) {
-        for(int width = 0; width < mapWidth; width++) {
-            sf::Sprite sprite(map[height][width].texture);
-            sprite.setPosition(sf::Vector2f(static_cast<float>(width * tileSize), static_cast<float>(height * tileSize)));
-
-            window.draw(sprite);
-        }
+    for(const auto& cell : map) {
+        sf::Sprite sprite(cell.first.texture);
+        sprite.setPosition({static_cast<float>(cell.second.first), static_cast<float>(cell.second.second)});
+        window.draw(sprite);
     }
 }
 

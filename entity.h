@@ -13,6 +13,9 @@ public:
     // Moves the entity in the specified direction
     void move(int direction);
 
+    // Ensures valid moves
+    bool validMove(int direction);
+
     /// Getters and Setters ///
     sf::Sprite getSprite() const;
 };

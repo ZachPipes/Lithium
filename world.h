@@ -1,23 +1,32 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+#include <map>
 #include <SFML/Graphics.hpp>
 
 #include "entity.h"
 
-constexpr int tileSize = 40;
+constexpr int tileSize = 50;
 
-enum tileType {Land, Water};
+enum tileType {DeepSea, Sea, Shore, Beach, Grass, Hills, Mountains};
 
 struct Tile {
     tileType type;
-    sf::Vector2i pos;
     sf::Texture texture;
+
+    // Overloads the '<' operator so Tile can be used in maps
+    bool operator<(const Tile& other) const {
+        if(type != other.type) {
+            return type < other.type;
+        }
+
+        return &texture < &other.texture;
+    }
 };
 
 class World {
     int mapWidth, mapHeight;
-    std::vector<std::vector<Tile>> map;
+    std::map<Tile, std::pair<int,int>> map;
 
 public:
     // Creates a world with only water textures

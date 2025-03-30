@@ -4,8 +4,13 @@
 
 class TextureManager {
 public:
-    static sf::Texture waterTexture;
-    static sf::Texture landTexture;
+    static sf::Texture DeepSeaTexture;
+    static sf::Texture SeaTexture;
+    static sf::Texture ShoreTexture;
+    static sf::Texture BeachTexture;
+    static sf::Texture GrassTexture;
+    static sf::Texture HillsTexture;
+    static sf::Texture MountainsTexture;
     static sf::Texture manTexture;
 
     static bool loadTextures();
