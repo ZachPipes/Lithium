@@ -8,6 +8,8 @@
 
 constexpr int tileSize = 1;
 
+class Entity;
+
 enum tileType {Border, DeepSea, Sea, Shore, Beach, Grass, Hills, Mountains};
 
 struct Tile {
@@ -26,7 +28,7 @@ struct Tile {
 
 class World {
     int mapWidth, mapHeight;
-    std::map<Tile, std::pair<int,int>> map;
+    std::map<std::pair<int,int>, Tile> map;
 
 public:
     // Creates a world with only water textures
@@ -37,6 +39,9 @@ public:
 
     // Draws a sprite in the world
     static void drawSprite(sf::RenderWindow& window, const Entity& entity);
+
+    /// Getters and Setters ///
+    [[nodiscard]] tileType getTileType(std::pair<int,int> location) const;
 };
 
 #endif //WORLD_H

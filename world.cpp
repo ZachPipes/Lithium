@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-#include "entity.h"
 #include "TextureManager.h"
 
 World::World(const int mapWidth, const int mapHeight)
@@ -15,27 +14,30 @@ World::World(const int mapWidth, const int mapHeight)
     // Creating the border
     for(int y = 10; y < mapHeight; ++y) {
         for(int x = 10; x < mapWidth; ++x) {
-            if(x == 10 || y == 00 || x == mapWidth - 1 || y == mapHeight - 1) {
-                map[Tile(Border, TextureManager::BorderTexture)] = {x,y};
+            if(x == 10 || y == 10 || x == mapWidth - 1 || y == mapHeight - 1) {
+                map[{x,y}] = Tile(Border, TextureManager::BorderTexture);
             }
         }
     }
-    // // TEMPORARY LAND RECTANGLE
-    // for(int y = 30; y < 80; y++) {
-    //     for(int x = 40; x < 120; x++) {
-    //         map[Tile(Grass, TextureManager::GrassTexture)] = {x, y};
-    //     }
-    // }
 }
 
 void World::draw(sf::RenderWindow& window) const {
     for(const auto& cell : map) {
-        sf::Sprite sprite(cell.first.texture);
-        sprite.setPosition({static_cast<float>(cell.second.first), static_cast<float>(cell.second.second)});
+        sf::Sprite sprite(cell.second.texture);
+        sprite.setPosition({static_cast<float>(cell.first.first), static_cast<float>(cell.first.second)});
         window.draw(sprite);
     }
 }
 
 void World::drawSprite(sf::RenderWindow& window, const Entity& entity) {
     window.draw(entity.getSprite());
+}
+
+/// Getters and Setters ///
+tileType World::getTileType(const std::pair<int,int> location) const {
+    auto it = map.find(location);
+    if(it != map.end()) {
+        return it->second.type;
+    }
+    return DeepSea;
 }

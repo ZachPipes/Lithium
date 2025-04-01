@@ -2,8 +2,12 @@
 #define ENTITY_H
 #include <SFML/Graphics/Sprite.hpp>
 
+#include "world.h"
+
+class World;
+
 class Entity {
-    int x, y;
+    std::pair<int, int> position;
     sf::Sprite sprite;
 
 public:
@@ -11,10 +15,10 @@ public:
     Entity(int x, int y, const sf::Texture& texture);
 
     // Moves the entity in the specified direction
-    void move(int direction);
+    void move(int dx, int dy);
 
     // Ensures valid moves
-    bool validMove(int direction);
+    bool validMove(const World& world, const std::pair<int,int>& newLocation) const;
 
     /// Getters and Setters ///
     sf::Sprite getSprite() const;
