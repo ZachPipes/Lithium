@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+sf::Texture TextureManager::BorderTexture;
 sf::Texture TextureManager::DeepSeaTexture;
 sf::Texture TextureManager::SeaTexture;
 sf::Texture TextureManager::ShoreTexture;
@@ -12,7 +13,10 @@ sf::Texture TextureManager::MountainsTexture;
 sf::Texture TextureManager::manTexture;
 
 bool TextureManager::loadTextures() {
-    // World textures
+    // Terrain textures
+    if (!BorderTexture.loadFromFile("../textures/Border.png")) {
+        std::cerr << "TEXTURE ERROR: Failed to load Border texture." << std::endl;
+    }
     if (!DeepSeaTexture.loadFromFile("../textures/DeepSea.png")) {
         std::cerr << "TEXTURE ERROR: Failed to load DeepSea texture." << std::endl;
     }

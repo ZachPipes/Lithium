@@ -6,25 +6,26 @@
 #include "TextureManager.h"
 
 World::World(const int mapWidth, const int mapHeight)
-: mapWidth(mapWidth), mapHeight(mapHeight) {
+: mapWidth(mapWidth + 2), mapHeight(mapHeight + 2) {
     if (!TextureManager::loadTextures()) {
         std::cerr << "ERROR: Failed to load textures." << std::endl;
         exit(1);  // Handle error appropriately (exit or fallback)
     }
 
-    // Creating the map with only water
-    /*for(int y = 0; y < mapHeight; y++) {
-        for(int x = 0; x < mapWidth; x++) {
-            map[Tile(DeepSea, TextureManager::DeepSeaTexture)] = {x, y};
-        }
-    }*/
-
-    // TEMPORARY LAND RECTANGLE
-    for(int y = 3; y < 8; y++) {
-        for(int x = 4; x < 12; x++) {
-            map[Tile(Grass, TextureManager::GrassTexture)] = {x, y};
+    // Creating the border
+    for(int y = 10; y < mapHeight; ++y) {
+        for(int x = 10; x < mapWidth; ++x) {
+            if(x == 10 || y == 00 || x == mapWidth - 1 || y == mapHeight - 1) {
+                map[Tile(Border, TextureManager::BorderTexture)] = {x,y};
+            }
         }
     }
+    // // TEMPORARY LAND RECTANGLE
+    // for(int y = 30; y < 80; y++) {
+    //     for(int x = 40; x < 120; x++) {
+    //         map[Tile(Grass, TextureManager::GrassTexture)] = {x, y};
+    //     }
+    // }
 }
 
 void World::draw(sf::RenderWindow& window) const {

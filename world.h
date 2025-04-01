@@ -6,9 +6,9 @@
 
 #include "entity.h"
 
-constexpr int tileSize = 50;
+constexpr int tileSize = 1;
 
-enum tileType {DeepSea, Sea, Shore, Beach, Grass, Hills, Mountains};
+enum tileType {Border, DeepSea, Sea, Shore, Beach, Grass, Hills, Mountains};
 
 struct Tile {
     tileType type;

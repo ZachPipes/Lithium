@@ -12,6 +12,8 @@ int main() {
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Lithium");
     window.setVerticalSyncEnabled(true); // Framerate limiting
 
+    //
+
     // Creating the world and entity
     sf::Clock clock;
     World world(100,100);
@@ -34,7 +36,6 @@ int main() {
         world.draw(window); // Draws world
 
         window.draw(man.getSprite());
-        /*
         if(isKeyPressed(sf::Keyboard::Key::W)) {
             man.move(1);
         }
@@ -46,7 +47,7 @@ int main() {
         }
         if(isKeyPressed(sf::Keyboard::Key::D)) {
             man.move(2);
-        }*/
+        }
 
         window.display(); // Displays the current frame
     }

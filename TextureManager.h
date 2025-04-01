@@ -4,6 +4,7 @@
 
 class TextureManager {
 public:
+    static sf::Texture BorderTexture;
     static sf::Texture DeepSeaTexture;
     static sf::Texture SeaTexture;
     static sf::Texture ShoreTexture;
