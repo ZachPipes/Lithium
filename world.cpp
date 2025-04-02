@@ -27,9 +27,6 @@ World::World(const int mapWidth, const int mapHeight)
     // Values for scale calculation
     constexpr int minVal = 1;
     constexpr int maxVal = 7;
-    constexpr int minPerlin = 0;
-    constexpr int maxPerlin = 1;
-
 
     for(int y = 0; y < 100; y++) {
         for(int x = 0; x < 100; x++) {
