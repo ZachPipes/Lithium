@@ -9,7 +9,8 @@ add_executable(Lithium main.cpp
         world.cpp
         entity.cpp
         TextureManager.h
-        TextureManager.cpp)
+        TextureManager.cpp
+        PerlinNoise.hpp)
 
 include_directories(headers /usr/include G:/SFML/include)
 
