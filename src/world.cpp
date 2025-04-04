@@ -28,6 +28,8 @@ World::World(const int mapWidth, const int mapHeight)
     constexpr int minVal = 1;
     constexpr int maxVal = 7;
 
+    // Find a more efficient way to do this:
+    // - Make bars for sprites? Would have to change the map DS to something else
     for(int y = 0; y < 100; y++) {
         for(int x = 0; x < 100; x++) {
             const double noise = perlin.octave2D_01((x * 0.01), (y * 0.01), 6,.5);

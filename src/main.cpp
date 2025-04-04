@@ -1,9 +1,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-#include "TextureManager.h"
+#include "/TextureManager.h"
 #include "world.h"
 #include "entity.h"
+#include "living.h"
 
 int main() {
     // Loads all textures
@@ -34,7 +35,7 @@ int main() {
     World world(worldWidth,worldHeight);
     clock.stop();
     std::cout << "World creating time: " << clock.getElapsedTime().asSeconds() << "s" << std::endl;
-    Entity man(50, 50, TextureManager::manTexture);
+    Living man(50, 50, TextureManager::manTexture, 10, 20);
 
     // Game loop
     while(window.isOpen()) {
@@ -127,26 +128,7 @@ int main() {
 
         window.draw(man.getSprite());
 
-        if(isKeyPressed(sf::Keyboard::Key::W)) {
-            if(man.validMove(world, {0,-1})) {
-                man.move(0, -1);
-            }
-        }
-        if(isKeyPressed(sf::Keyboard::Key::A)) {
-            if(man.validMove(world, {-1,0})) {
-                man.move(-1, 0);
-            }
-        }
-        if(isKeyPressed(sf::Keyboard::Key::S)) {
-            if(man.validMove(world, {0,1})) {
-                man.move(0, 1);
-            }
-        }
-        if(isKeyPressed(sf::Keyboard::Key::D)) {
-            if(man.validMove(world, {1,0})) {
-                man.move(1, 0);
-            }
-        }
+        man.Sim();
 
         window.display(); // Displays the current frame
     }

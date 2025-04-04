@@ -3,16 +3,18 @@ project(Lithium)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Lithium main.cpp
-        entity.h
-        world.h
-        world.cpp
-        entity.cpp
-        TextureManager.h
-        TextureManager.cpp
-        PerlinNoise.hpp)
+add_executable(Lithium src/main.cpp
+        include/entity.h
+        include/world.h
+        src/world.cpp
+        src/entity.cpp
+        include/TextureManager.h
+        src/TextureManager.cpp
+        lib/PerlinNoise.hpp
+        include/living.h
+        src/living.cpp)
 
-include_directories(headers /usr/include G:/SFML/include)
+include_directories(headers G:/Programming/Projects/Lithium/include G:/SFML/include)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 find_package(SFML REQUIRED COMPONENTS system window graphics)
