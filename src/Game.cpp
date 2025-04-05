@@ -1,10 +1,16 @@
 #include "Game.h"
+#include <iostream>
 
 /// INITIALIZERS ///
 void Game::initVariables() {
     this->window = nullptr;
     this->videoMode.size = {600,600};
     this->videoMode.bitsPerPixel = 32;
+
+    // Texture handling
+    if(!this->atlas.loadFromFile("G:/Programming/Projects/Lithium/assets/textures/atlas.png")) {
+        std::cerr << "Failed to load atlas!" << std::endl;
+    }
 }
 
 void Game::initWindow() {
@@ -38,7 +44,7 @@ void Game::update() const {
     this->pollEvents();
 }
 
-// Renders game objects
+// Renders game objects and textures
 // Steps:
 //  - Clears old frame
 //  - Renders game objects

@@ -8,8 +8,6 @@ add_executable(Lithium src/main.cpp
         include/world.h
         src/world.cpp
         src/entity.cpp
-        include/TextureManager.h
-        src/TextureManager.cpp
         lib/PerlinNoise.hpp
         include/living.h
         src/living.cpp

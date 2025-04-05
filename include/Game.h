@@ -6,6 +6,8 @@ class Game {
     sf::RenderWindow* window;
     sf::VideoMode videoMode;
 
+    sf::Texture atlas;
+
     void initVariables();
     void initWindow();
 
