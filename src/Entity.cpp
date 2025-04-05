@@ -1,8 +1,8 @@
-#include "entity.h"
+#include "Entity.h"
 
 #include <iostream>
 #include <SFML/Graphics/Sprite.hpp>
-#include "world.h"
+#include "World.h"
 
 Entity::Entity(const int x, const int y, const sf::Texture &texture) : sprite(texture) {
     position.first = x * tileSize;

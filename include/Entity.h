@@ -2,7 +2,7 @@
 #define ENTITY_H
 #include <SFML/Graphics/Sprite.hpp>
 
-#include "world.h"
+#include "World.h"
 
 class World;
 

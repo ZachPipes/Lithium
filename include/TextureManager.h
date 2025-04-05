@@ -4,6 +4,8 @@
 
 class TextureManager {
 public:
+    static std::string textureDirectory;
+
     static sf::Texture BorderTexture;
     static sf::Texture DeepSeaTexture;
     static sf::Texture SeaTexture;

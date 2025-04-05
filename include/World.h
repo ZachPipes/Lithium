@@ -4,7 +4,7 @@
 #include <map>
 #include <SFML/Graphics.hpp>
 
-#include "entity.h"
+#include "Entity.h"
 
 constexpr int tileSize = 1;
 

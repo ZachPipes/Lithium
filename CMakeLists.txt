@@ -12,9 +12,11 @@ add_executable(Lithium src/main.cpp
         src/TextureManager.cpp
         lib/PerlinNoise.hpp
         include/living.h
-        src/living.cpp)
+        src/living.cpp
+        include/game.h
+        src/game.cpp)
 
-include_directories(headers G:/Programming/Projects/Lithium/include G:/SFML/include)
+include_directories(headers G:/Programming/Projects/Lithium/include G:/Programming/Projects/Lithium/lib G:/SFML/include)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 find_package(SFML REQUIRED COMPONENTS system window graphics)

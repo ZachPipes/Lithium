@@ -1,7 +1,7 @@
 #ifndef LIVING_H
 #define LIVING_H
 
-#include "entity.h"
+#include "Entity.h"
 
 class Living : public Entity {
     double health;

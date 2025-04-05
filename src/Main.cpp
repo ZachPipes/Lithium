@@ -1,50 +1,61 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
-
-#include "/TextureManager.h"
-#include "world.h"
-#include "entity.h"
-#include "living.h"
+#include "Game.h"
 
 int main() {
-    // Loads all textures
-    TextureManager::loadTextures();
+    Game game;
+    ///////////////
+    // Game loop //
+    ///////////////
+    while(game.running()) {
+        // Update
+        game.update();
 
-    // Creating the window
-    sf::RenderWindow window(sf::VideoMode({800, 800}), "Lithium");
-    window.setVerticalSyncEnabled(true); // Framerate limiting
+        // Render
+        game.render();
+    }
 
-    // VIEW SIZE !!!
-    constexpr float viewSize = 200.f;
-    // Setting the viewport
-    sf::View view(sf::FloatRect({-25.f, -25.f}, {viewSize,viewSize}));
-    window.setView(view);
+    return 0;
+}
 
-    // Camera variables
-    bool isDragging = false;
-    sf::Vector2i mousePressPos;
-    constexpr float dragSensitivity = .25f; // Sensitivity is pretty on point at .25f (on point being the mouse and window move at the same speed)
-    constexpr float minZoom = .9f;
-    constexpr float maxZoom = 3.5f;
+///////////////////
+// Window Events //
+///////////////////
+/*
+while
+(
+const std::optional<sf::Event> event = window.pollEvent()
+)
+ {
 
-    constexpr float worldWidth = 100.f;
-    constexpr float worldHeight = 100.f;
+}*/
 
-    // Creating the world and entity
-    sf::Clock clock;
-    World world(worldWidth,worldHeight);
-    clock.stop();
-    std::cout << "World creating time: " << clock.getElapsedTime().asSeconds() << "s" << std::endl;
-    Living man(50, 50, TextureManager::manTexture, 10, 20);
+// // Loads all textures
+// TextureManager::loadTextures();
+//
+// constexpr float worldWidth = 100.f;
+// constexpr float worldHeight = 100.f;
+//
+// // Creating the world and entity
+// sf::Clock clock;
+// World world(worldWidth,worldHeight);
+// clock.stop();
+// std::cout << "World creating time: " << clock.getElapsedTime().asSeconds() << "s" << std::endl;
+// Living man(50, 50, TextureManager::manTexture, 10, 20);
 
-    // Game loop
-    while(window.isOpen()) {
-        // Handles window events
-        while(const std::optional<sf::Event> event = window.pollEvent()) {
-            // CLOSE requested
-            if(event->is<sf::Event::Closed>()) {
-                window.close();
-            }
+// This code will have to be fixed later, or not implemented at all
+/*
+            CODE FROM ABOVE:::
+            // VIEW SIZE
+            constexpr float viewSize = 200.f;
+            // Setting the viewport
+            sf::View view(sf::FloatRect({-25.f, -25.f}, {viewSize,viewSize}));
+            window.setView(view);
+
+            // Camera variables
+            bool isDragging = false;
+            sf::Vector2i mousePressPos;
+            constexpr float dragSensitivity = .25f; // Sensitivity is pretty on point at .25f (on point being the mouse and window move at the same speed)
+            constexpr float minZoom = .9f;
+            constexpr float maxZoom = 3.5f;
 
             // RESIZE operation
             if(const auto* resized = event->getIf<sf::Event::Resized>()) {
@@ -118,20 +129,5 @@ int main() {
 
                 mousePressPos = currentMousePos;
             }
-
             window.setView(view);
-        }
-
-        window.clear(sf::Color(38,51,115)); // Clears previous frame and sets background to deepsea blue
-
-        world.draw(window); // Draws world
-
-        window.draw(man.getSprite());
-
-        man.Sim();
-
-        window.display(); // Displays the current frame
-    }
-
-    return 0;
-}
+            */

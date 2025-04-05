@@ -1,15 +1,11 @@
 #include <iostream>
 
-#include "world.h"
+#include "World.h"
 #include "TextureManager.h"
 #include "PerlinNoise.hpp"
 
 World::World(const int mapWidth, const int mapHeight)
 : mapWidth(mapWidth + 2), mapHeight(mapHeight + 2) {
-    if (!TextureManager::loadTextures()) {
-        std::cerr << "ERROR: Failed to load textures." << std::endl;
-        exit(1);  // Handle error appropriately (exit or fallback)
-    }
 
     // Creating the border
     for(int y = 10; y < mapHeight; ++y) {
@@ -21,7 +17,7 @@ World::World(const int mapWidth, const int mapHeight)
     }
 
     // Generating the world
-    const siv::PerlinNoise::seed_type seed = 121569189489843456u;
+    constexpr siv::PerlinNoise::seed_type seed = static_cast<siv::PerlinNoise::seed_type>(121569189489843456);
     const siv::PerlinNoise perlin { seed };
 
     // Values for scale calculation

@@ -1,5 +1,5 @@
-#include "living.h"
-#include "entity.h"
+#include "Living.h"
+#include "Entity.h"
 
 // Constructor
 Living::Living(const int x, const int y, const sf::Texture &texture, const int hp, const int hgr) : Entity(x, y, texture) {
