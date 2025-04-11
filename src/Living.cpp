@@ -2,10 +2,10 @@
 #include "Entity.h"
 
 // Constructor
-Living::Living(const int x, const int y, const sf::Texture &texture, const int hp, const int hgr) : Entity(x, y, texture) {
-    health = hp;
-    hunger = hgr;
-}
+// Living::Living(const int x, const int y, const sf::Texture &texture, const int hp, const int hgr) : Entity(x, y, texture) {
+//     health = hp;
+//     hunger = hgr;
+// }
 
 // SIMULATE
 void Living::Sim() {

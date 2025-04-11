@@ -1,47 +1,32 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include <map>
 #include <SFML/Graphics.hpp>
-
 #include "Entity.h"
-
-constexpr int tileSize = 1;
+#include <vector>
 
 class Entity;
 
-enum tileType {Border, DeepSea, Sea, Shore, Beach, Grass, Hills, Mountains};
-
-struct Tile {
-    tileType type;
-    sf::Texture texture;
-
-    // Overloads the '<' operator so Tile can be used in maps
-    bool operator<(const Tile& other) const {
-        if(type != other.type) {
-            return type < other.type;
-        }
-
-        return &texture < &other.texture;
-    }
-};
+enum Tile {DeepSea, Sea, Shore, Beach, Grass, Hills, Mountains};
 
 class World {
-    int mapWidth, mapHeight;
-    std::map<std::pair<int,int>, Tile> map;
+    static constexpr int WIDTH = 100;
+    static constexpr int HEIGHT = 100;
+    std::vector<std::vector<int>> perlinMap;
+    std::vector<Entity>* entities;
 
 public:
-    // Creates a world with only water textures
-    World(int mapWidth, int mapHeight);
+    World();
 
-    // Draws the world in the window
-    void draw(sf::RenderWindow& window) const;
+    void generatePerlinMap();
 
-    // Draws a sprite in the world
-    static void drawSprite(sf::RenderWindow& window, const Entity& entity);
+    void drawWorld(sf::RenderWindow& window, const sf::Texture& atlas) const;
 
-    /// Getters and Setters ///
-    [[nodiscard]] tileType getTileType(std::pair<int,int> location) const;
+    void drawEntities(sf::RenderWindow& window) const;
+
+    /// GETTERS AND SETTERS ///
+    [[nodiscard]] std::vector<Entity>* getEntities() const;
+    void addEntity(const Entity& entity) const;
 };
 
 #endif //WORLD_H

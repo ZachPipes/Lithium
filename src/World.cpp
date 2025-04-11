@@ -1,84 +1,89 @@
+#include "World.h"
+#include "Entity.h"
+
 #include <iostream>
 
-#include "World.h"
-#include "TextureManager.h"
 #include "PerlinNoise.hpp"
 
-World::World(const int mapWidth, const int mapHeight)
-: mapWidth(mapWidth + 2), mapHeight(mapHeight + 2) {
+World::World() {
+    perlinMap.resize(100);
+}
 
-    // Creating the border
-    for(int y = 10; y < mapHeight; ++y) {
-        for(int x = 10; x < mapWidth; ++x) {
-            if(x == 10 || y == 10 || x == mapWidth - 1 || y == mapHeight - 1) {
-                map[{x,y}] = Tile(Border, TextureManager::BorderTexture);
-            }
-        }
-    }
-
-    // Generating the world
-    constexpr siv::PerlinNoise::seed_type seed = static_cast<siv::PerlinNoise::seed_type>(121569189489843456);
+void World::generatePerlinMap() {
+    constexpr auto seed = static_cast<siv::PerlinNoise::seed_type>(14159265358979323);
     const siv::PerlinNoise perlin { seed };
 
-    // Values for scale calculation
-    constexpr int minVal = 1;
-    constexpr int maxVal = 7;
-
-    // Find a more efficient way to do this:
-    // - Make bars for sprites? Would have to change the map DS to something else
     for(int y = 0; y < 100; y++) {
         for(int x = 0; x < 100; x++) {
-            const double noise = perlin.octave2D_01((x * 0.01), (y * 0.01), 6,.5);
+            // Based off the # of variables in the Tile enum
+            constexpr int maxVal = 7;
+            constexpr int minVal = 1;
 
+            const double noise = perlin.octave2D_01(x * 0.01,y * 0.01,6,.5);
             const int scaled_noise = minVal + (maxVal - minVal) * noise;
-
-            // weighed_noise to tiles
-            switch(scaled_noise) {
-                case 1:
-                    map[{x,y}] = Tile(DeepSea, TextureManager::SeaTexture);
-                    break;
-                case 2:
-                    map[{x,y}] = Tile(Sea, TextureManager::SeaTexture);
-                    break;
-                case 3:
-                    map[{x,y}] = Tile(Shore, TextureManager::ShoreTexture);
-                    break;
-                case 4:
-                    map[{x,y}] = Tile(Beach, TextureManager::BeachTexture);
-                    break;
-                case 5:
-                    map[{x,y}] = Tile(Grass, TextureManager::GrassTexture);
-                    break;
-                case 6:
-                    map[{x,y}] = Tile(Hills, TextureManager::HillsTexture);
-                    break;
-                case 7:
-                    map[{x,y}] = Tile(Mountains, TextureManager::MountainsTexture);
-                    break;
-                default:
-                    map[{x,y}] = Tile(Border, TextureManager::BorderTexture);
-            }
+            perlinMap[y].push_back(scaled_noise);
         }
     }
 }
 
-void World::draw(sf::RenderWindow& window) const {
-    for(const auto& cell : map) {
-        sf::Sprite sprite(cell.second.texture);
-        sprite.setPosition({static_cast<float>(cell.first.first), static_cast<float>(cell.first.second)});
-        window.draw(sprite);
+void World::drawWorld(sf::RenderWindow& window, const sf::Texture& atlas) const {
+    for(float y = 0; y < 100; y++) {
+        for(float x = 0; x < 100; x++) {
+            const int tile = perlinMap[y][x];
+            sf::Sprite sprite(atlas, sf::IntRect(sf::Vector2(0,0),sf::Vector2(1,1)));
+            sprite.setPosition({x*5,y*5});
+            // This is not the way I want to do this, but it will have to wait till later
+            sprite.setScale(sf::Vector2f(5,5));
+
+            switch(tile) {
+                case 1:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(1,0),sf::Vector2(1,1)));
+                    break;
+                case 2:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(2,0),sf::Vector2(1,1)));
+                    break;
+
+                case 3:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(3,0),sf::Vector2(1,1)));
+                    break;
+
+                case 4:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(4,0),sf::Vector2(1,1)));
+                    break;
+
+                case 5:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(5,0),sf::Vector2(1,1)));
+                    break;
+
+                case 6:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(6,0),sf::Vector2(1,1)));
+                    break;
+
+                case 7:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(7,0),sf::Vector2(1,1)));
+                    break;
+
+                default:
+                    sprite.setTextureRect(sf::IntRect(sf::Vector2(0,0),sf::Vector2(1,1)));
+                    std::cout << "BAD TILE" << std::endl;
+                    break;
+            }
+
+            window.draw(sprite);
+        }
     }
 }
 
-void World::drawSprite(sf::RenderWindow& window, const Entity& entity) {
-    window.draw(entity.getSprite());
+void World::drawEntities(sf::RenderWindow &window) const {
+    for(auto & entity : *entities) {
+        entity.drawEntity(window);
+    }
 }
 
 /// Getters and Setters ///
-tileType World::getTileType(const std::pair<int,int> location) const {
-    auto it = map.find(location);
-    if(it != map.end()) {
-        return it->second.type;
-    }
-    return DeepSea;
+std::vector<Entity>* World::getEntities() const {
+    return entities;
+}
+void World::addEntity(const Entity& entity) const {
+    entities->push_back(entity);
 }

@@ -1,30 +1,48 @@
 #include "Entity.h"
 
-#include <iostream>
 #include <SFML/Graphics/Sprite.hpp>
-#include "World.h"
+#include "Game.h"
 
-Entity::Entity(const int x, const int y, const sf::Texture &texture) : sprite(texture) {
-    position.first = x * tileSize;
-    position.second = y * tileSize;
-    sprite.setPosition(sf::Vector2f(static_cast<float>(x * tileSize), static_cast<float>(y * tileSize)));
+Entity::Entity(const int x, const int y, const sf::IntRect area, const int health, const int hunger)
+: x(x), y(y), sprite(getTexture(1), area), health(health), hunger(hunger) {
+    sprite.setPosition({static_cast<float>(x), static_cast<float>(y)});
+    sprite.setScale({5, 5});
+    ticker = 0;
 }
 
-sf::Sprite Entity::getSprite() const {
-    return sprite;
+void Entity::drawEntity(sf::RenderWindow& window) const {
+    window.draw(sprite);
 }
 
-void Entity::move(const int dx, const int dy) {
-    // Change this in the future to be more fluid and dynamic
-    sprite.setPosition(sf::Vector2f(static_cast<float>(position.first+dx), static_cast<float>(position.second+dy)));
-    position.first += dx;
-    position.second += dy;
+void Entity::spawn() {
+
 }
 
-bool Entity::validMove(const World &world, const std::pair<int, int> &newLocation) const {
-    tileType target = world.getTileType({position.first + newLocation.first, position.second + newLocation.second});
-    if(target == Border) {
-        return false;
+void Entity::kill() {
+
+}
+
+void Entity::simulate() {
+    ticker++;
+    if(ticker % 50 == 0) {
+        hunger--;
     }
-    return true;
+    if(hunger < 10 && ticker % 25 == 0) {
+        health--;
+    }
+}
+
+/// GETTERS AND SETTERS ///
+double Entity::getHealth() const {
+    return health;
+}
+double Entity::getHunger() const {
+    return hunger;
+}
+
+void Entity::setHealth(const double hp) {
+    health = hp;
+}
+void Entity::setHunger(const double hgr) {
+    hunger = hgr;
 }

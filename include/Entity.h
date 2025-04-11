@@ -5,23 +5,36 @@
 #include "World.h"
 
 class World;
+class Game;
 
 class Entity {
-    std::pair<int, int> position;
+    int x, y;
     sf::Sprite sprite;
+    double health, hunger;
+
+    // Counter for all stats
+    // I can see this method becoming obsolete in the future with multiple entities all counting up
+    // It also could lead to crazy large numbers the longer the runtime
+    unsigned int ticker;
 
 public:
-    // Creates a basic entity with the man texture
-    Entity(int x, int y, const sf::Texture& texture);
+    // Constructor
+    Entity(int x, int y, sf::IntRect area, int health, int hunger);
 
-    // Moves the entity in the specified direction
-    void move(int dx, int dy);
+    void drawEntity(sf::RenderWindow &window) const;
 
-    // Ensures valid moves
-    bool validMove(const World& world, const std::pair<int,int>& newLocation) const;
+    void spawn();
 
-    /// Getters and Setters ///
-    sf::Sprite getSprite() const;
+    void kill();
+
+    void simulate();
+
+    /// GETTERS AND SETTERS ///
+    double getHealth() const;
+    double getHunger() const;
+
+    void setHealth(double hp);
+    void setHunger(double hgr);
 };
 
 #endif //ENTITY_H

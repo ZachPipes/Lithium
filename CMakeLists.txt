@@ -12,7 +12,8 @@ add_executable(Lithium src/main.cpp
         include/living.h
         src/living.cpp
         include/game.h
-        src/game.cpp)
+        src/game.cpp
+        include/Textures.h)
 
 include_directories(headers G:/Programming/Projects/Lithium/include G:/Programming/Projects/Lithium/lib G:/SFML/include)
 

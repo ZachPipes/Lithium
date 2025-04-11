@@ -1,7 +1,15 @@
 #include "Game.h"
+#include "World.h"
+#include "Entity.h"
 
 int main() {
     Game game;
+
+    Entity man(250,250,sf::IntRect({0,0}, {1,1}),20,20);
+    Entity berryBush(270,270,sf::IntRect({1,0}, {1,1}),20,20);
+
+    game.spawnEntity(man);
+    game.spawnEntity(berryBush);
     ///////////////
     // Game loop //
     ///////////////
@@ -12,34 +20,8 @@ int main() {
         // Render
         game.render();
     }
-
     return 0;
 }
-
-///////////////////
-// Window Events //
-///////////////////
-/*
-while
-(
-const std::optional<sf::Event> event = window.pollEvent()
-)
- {
-
-}*/
-
-// // Loads all textures
-// TextureManager::loadTextures();
-//
-// constexpr float worldWidth = 100.f;
-// constexpr float worldHeight = 100.f;
-//
-// // Creating the world and entity
-// sf::Clock clock;
-// World world(worldWidth,worldHeight);
-// clock.stop();
-// std::cout << "World creating time: " << clock.getElapsedTime().asSeconds() << "s" << std::endl;
-// Living man(50, 50, TextureManager::manTexture, 10, 20);
 
 // This code will have to be fixed later, or not implemented at all
 /*

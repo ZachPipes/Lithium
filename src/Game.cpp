@@ -3,14 +3,14 @@
 
 /// INITIALIZERS ///
 void Game::initVariables() {
+    // Window
     this->window = nullptr;
-    this->videoMode.size = {600,600};
+    this->videoMode.size = {500,500};
     this->videoMode.bitsPerPixel = 32;
 
-    // Texture handling
-    if(!this->atlas.loadFromFile("G:/Programming/Projects/Lithium/assets/textures/atlas.png")) {
-        std::cerr << "Failed to load atlas!" << std::endl;
-    }
+    // World
+    this->world = World();
+    this->world.generatePerlinMap();
 }
 
 void Game::initWindow() {
@@ -26,6 +26,9 @@ Game::Game() {
 // Destructor
 Game::~Game() {
     delete this->window;
+    for(const Entity* entity : this->world.getEntities()) {
+        delete entity;
+    }
 }
 
 void Game::pollEvents() const {
@@ -52,10 +55,28 @@ void Game::update() const {
 void Game::render() const {
     this->window->clear(sf::Color(38,51,115)); // Clears previous frame and sets background to deepsea blue
 
+    this->world.drawWorld(*this->window, worldAtlas);
+    this->world.drawEntities(*this->window);
+
     this->window->display();
+}
+
+// Game functions
+void Game::spawnEntity(const Entity& entity) const {
+    this->world.addEntity(entity);
 }
 
 // Getters and Setters
 bool Game::running() const {
     return this->window->isOpen();
+}
+sf::Texture& Game::getTexture(const int value) {
+    switch(value) {
+        case 0:
+            return worldAtlas;
+        case 1:
+            return entityAtlas;
+        default:
+            std::cerr << "Invalid Value!" << std::endl;
+    }
 }
